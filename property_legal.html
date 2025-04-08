@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Consultation Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge {
+            background-color: #6c63ff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        .description {
+            color: #666;
+            font-size: 1em;
+            margin-top: -10px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: start;
+            margin-top: 20px;
+        }
+
+        .feature img {
+            width: 70px;
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .packages {
+            margin-top: 40px;
+        }
+
+        .packages h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            background-color: #f0f4f8;
+            margin-right: 5px;
+        }
+
+        .tab.active {
+            background-color: #e0f7de;
+            color: #6c63ff;
+        }
+
+        .package-details {
+            background-color: #e0f7de;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .package-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .package-item img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .agreement-container {
+            background-color: #4a4da1;
+            color: #fff;
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .agreement-title {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .agreement-subtitle {
+            font-size: 1em;
+            margin-top: 10px;
+            color: #d3d3e6;
+        }
+
+        .benefits-container {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item img {
+            width: 70px;
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        .benefit-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #4a4da1;
+        }
+
+        .benefit-description {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .footer-container {
+            background-color: #d3d3e6;
+            color: #4a4da1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-item img {
+            width: 70px;
+            height: 70px;
+            margin-right: 8px;
+        }
+
+        .profile-section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .profile-cards-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 10px;
+        }
+
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: center;
+        }
+
+        .profile-picture {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+        }
+
+        .profile-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+            margin: 0;
+        }
+
+        .profile-qualification {
+            font-size: 14px;
+            color: #666666;
+            margin: 5px 0;
+        }
+
+        .profile-experience {
+            font-size: 13px;
+            color: #888888;
+            margin-top: 10px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #333;
+        }
+
+        .header-section {
+    background-color: purple; /* Background color for the header */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0; /* Rounded corners for top */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff; /* Header text color */
+}
+    </style>
+</head>
+<body>
+    
+    <div class="header-section">
+        <h1 class="header-title">Property legal services</h1>
+    </div>
+
+
+<div class="container">
+    <span class="badge">NB Assured</span>
+    <h2>Why consult a Legal Expert?</h2>
+    <p class="description">Purchasing a property is the single biggest and expensive affair a person makes in their lifetime. A real estate attorney can make the entire purchasing process easier and safe.</p>
+
+    <div class="feature">
+        <img src="images/document_scrutiny (1).svg" alt="Icon">
+        <div>
+            <p class="feature-title">Documents Scrutiny</p>
+            <p class="feature-description">Before the property deed is finalised, property advocate thoroughly examines all the property documents, such as the title check and sale deed.</p>
+        </div>
+    </div>
+
+    <div class="feature">
+        <img src="images/protection_conflict.svg" alt="Icon">
+        <div>
+            <p class="feature-title">Protection from Legal Conflicts</p>
+            <p class="feature-description">A legal professional checks the property for any pending legal matters that could put a buyer in jeopardy.</p>
+        </div>
+    </div>
+
+    <div class="feature">
+        <img src="images/protection_shady.svg" alt="Icon">
+        <div>
+            <p class="feature-title">Protection against shady sellers</p>
+            <p class="feature-description">A legal professional investigates the ownership of the property, any unpaid loans on it, and guards against frauds.</p>
+        </div>
+    </div>
+
+    <div class="packages">
+        <h3>What do the packages include?</h3>
+        <div class="tabs">
+            <div class="tab active">Due Diligence</div>
+        </div>
+        <div class="package-details">
+            <div class="package-item">
+                <img src="images/check.png" alt="Check">
+                <p>Verify property documents before you buy</p>
+            </div>
+            <div class="package-item">
+                <img src="images/check.png" alt="Check">
+                <p>Title Search Report</p>
+            </div>
+            <div class="package-item">
+                <img src="images/check.png" alt="Check">
+                <p>Scrutiny of Technical Documents</p>
+            </div>
+            <div class="package-item">
+                <img src="images/check.png" alt="Check">
+                <p>Scrutiny of Govt. Approvals</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="agreement-container">
+    <h2 class="agreement-title">Online Sales Agreement in Bangalore</h2>
+    <p class="agreement-subtitle">Benefits of choosing NoBroker Legal Services</p>
+
+    <div class="benefits-container">
+        <div class="benefit-item">
+            <img src="images/certified_icon.svg" alt="Certified Advocates Icon">
+            <div>
+                <p class="benefit-title">Certified Advocates</p>
+                <p class="benefit-description">Senior Advocates with experience 15yrs+</p>
+            </div>
+        </div>
+
+        <div class="benefit-item">
+            <img src="images/low_price_icon.svg" alt="Dedicated Legal Expert Icon">
+            <div>
+                <p class="benefit-title">Dedicated Legal Expert</p>
+                <p class="benefit-description">Door step assistance for all documentations</p>
+            </div>
+        </div>
+
+        <div class="benefit-item">
+            <img src="images/legal_expert_icon.svg" alt="Lowest Price Icon">
+            <div>
+                <p class="benefit-title">Lowest Price Pre-Negotiated</p>
+                <p class="benefit-description">Transparent pricing with fastest process</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-item">
+            <img src="images/group_icon.svg" alt="Customer Icon">
+            <p>1 lakh+ Happy customers served</p>
+        </div>
+        <div class="footer-item">
+            <img src="images/star_icon.svg" alt="Rating Icon">
+            <p>4.9 Rating • 12450 Reviews</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="profile-section">
+    <h2 class="section-title">We Work with Expert Lawyers</h2>
+
+    <div class="profile-cards-container">
+        <!-- Profile Card 1 -->
+        <div class="profile-card">
+            <img src="images/VIVEK_AGARWAL.webp" alt="Vivek Agarwal" class="profile-picture">
+            <h3 class="profile-name">Vivek Agarwal</h3>
+            <p class="profile-qualification">MASTER OF LAW<br>(CORPORATE LAW) - LL.M.</p>
+            <p class="profile-experience">14 Years 6 months</p>
+        </div>
+
+        <!-- Profile Card 2 -->
+        <div class="profile-card">
+            <img src="images/Archana_Shukla.webp" alt="Archana Shukla" class="profile-picture">
+            <h3 class="profile-name">Archana Shukla</h3>
+            <p class="profile-qualification">LLB (Hons.), LLM</p>
+            <p class="profile-experience">18 years</p>
+        </div>
+
+        <!-- Profile Card 3 -->
+        <div class="profile-card">
+            <img src="images/S_SUJATHA.webp" alt="S. Sujatha" class="profile-picture">
+            <h3 class="profile-name">S. Sujatha</h3>
+            <p class="profile-qualification">BAL., LLB</p>
+            <p class="profile-experience">21 Years</p>
+        </div>
+
+        <!-- Profile Card 4 -->
+        <div class="profile-card">
+            <img src="images/N_VELAYUDAM.webp" alt="N. Velayuda" class="profile-picture">
+            <h3 class="profile-name">N. Velayuda</h3>
+            <p class="profile-qualification">M.A.B.L.</p>
+            <p class="profile-experience">20 years</p>
+        </div>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

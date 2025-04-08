@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2BHK Room Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main page styling */
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Container for the gallery */
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 150px; /* Adjust for the heading at the top */
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /* Gallery styling */
+       /* Container for the gallery */
+    .main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px; /* Adjust this value for the desired gap */
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 150px; /* Adjust for the heading at the top */
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 150px;
+}
+
+
+        /* On hover animation */
+        .gallery-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .room-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        /* Smooth image zoom on hover */
+        .image-container:hover .room-image {
+            transform: scale(1.1);
+        }
+
+        /* Arrow styles */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+
+        .arrow.left {
+            left: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Room list styling */
+        .room-list {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .room-list span {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Room list hover effect */
+        .room-list span:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+        /* Price section */
+        .price-details {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .price-details span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .vip-price {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        /* Confirm button */
+        .confirm-button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+
+        /* Button hover effect */
+        .confirm-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+        <h1>2BHK Room Gallery</h1>
+
+        <div class="main-container">
+            <!-- First Room Gallery -->
+            <div class="gallery-container">
+                <div class="image-container">
+                    <img id="roomImage1" class="room-image" src="images/2bhk1.jpg" alt="Room Image 1">
+                </div>
+                <div class="room-list">
+                    <span>Living Room</span>
+                    <span>Bathroom(2)</span>
+                    <span>Kitchen</span>
+                    <span>Bedroom(2)</span>
+                    <span>Balcony</span>
+                </div>
+                <div class="price-details">
+                    <span class="vip-price">VIP Price: 4,679₹</span>
+                    <span>Price Range: 8,000₹ to 12,000₹</span>
+                </div>
+                <button class="confirm-button" onclick="location.href='otp.html'">Confirm Booking</button>
+
+            </div>
+
+            <!-- Second Room Gallery -->
+            <div class="gallery-container">
+                <div class="image-container">
+                    <img id="roomImage2" class="room-image" src="images/2bhk2.jpg" alt="Room Image 2">
+                </div>
+                <div class="room-list">
+                    <span>Living Room</span>
+                    <span>Bathroom(2)</span>
+                    <span>Kitchen</span>
+                    <span>Bedroom(2)</span>
+                    <span>Balcony</span>
+                </div>
+                <div class="price-details">
+                    <span class="vip-price">VIP Price: 4,679₹</span>
+                    <span>Price Range: 9,500₹ to 13,000₹</span>
+                </div>
+                <button class="confirm-button" onclick="location.href='otp.html'">Confirm Booking</button>
+
+            </div>
+
+            <!-- Third Room Gallery -->
+            <div class="gallery-container">
+                <div class="image-container">
+                    <img id="roomImage3" class="room-image" src="images/2bhk3.jpg" alt="Room Image 3">
+                </div>
+                <div class="room-list">
+                    <span>Living Room</span>
+                    <span>Bathroom (2)</span>
+                    <span>Kitchen</span>
+                    <span>Bedroom (2)</span>
+                    <span>Balcony</span>
+                </div>
+                <div class="price-details">
+                    <span class="vip-price">VIP Price: 4,679₹</span>
+                    <span>Price Range: 5,000₹ to 7,000₹</span>
+                </div>
+                <button class="confirm-button" onclick="location.href='otp.html'">Confirm Booking</button>
+
+            </div>
+
+            <!-- Fourth Room Gallery -->
+            <div class="gallery-container">
+                <div class="image-container">
+                    <img id="roomImage4" class="room-image" src="images/2bhk4.jpg" alt="Room Image 4">
+                </div>
+                <div class="room-list">
+                    <span>Living Room</span>
+                    <span>Bathroom (2)</span>
+                    <span>Kitchen</span>
+                    <span>Bedroom (2)</span>
+                    <span>Balcony</span>
+                </div>
+                <div class="price-details">
+                    <span class="vip-price">VIP Price: 4,679₹</span>
+                    <span>Price Range: 6,500₹ to 10,000₹</span>
+                </div>
+                <button class="confirm-button" onclick="location.href='otp.html'">Confirm Booking</button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function previousImage(id) {
+            // Functionality for previous image navigation
+        }
+
+        function nextImage(id) {
+            // Functionality for next image navigation
+        }
+
+        function confirmBooking() {
+            alert("Booking confirmed!");
+        }
+    </script>
+
+</body>
+
+</html>

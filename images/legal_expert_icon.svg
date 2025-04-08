@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46">
+  <g id="Group_14900" data-name="Group 14900" transform="translate(-32 -129)">
+    <rect id="Rectangle_872" data-name="Rectangle 872" width="46" height="46" rx="4" transform="translate(32 129)" fill="none"/>
+    <g id="Group_31115" data-name="Group 31115" transform="translate(39.087 137)">
+      <path id="Path_124630" data-name="Path 124630" d="M23.489,75.218a29.889,29.889,0,0,1-5.756,3.492C17.219,78.573,8,73.954,8,69.626V59.95c3.325-.273,8.557-2.773,9.733-3.95a20.964,20.964,0,0,0,6.443,3.217c-.037.007,4.321,1.454,4.321,1.454L27.943,71.8Z" transform="translate(-7.376 -51.458)" fill="#4d52a0" stroke="#363636" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+      <path id="Path_124628" data-name="Path 124628" d="M234.6,14.488a2.488,2.488,0,0,1-2.6-2.6V10.6a2.6,2.6,0,1,1,5.191,0v1.3A2.488,2.488,0,0,1,234.6,14.488Z" transform="translate(-213.209 -7.351)" fill="#fff" stroke="#363636" stroke-linejoin="round" stroke-width="1.2"/>
+      <rect id="Rectangle_65898" data-name="Rectangle 65898" width="7" height="14" transform="translate(17.913 16)" fill="#fff"/>
+      <line id="Line_1429" data-name="Line 1429" y2="4" transform="translate(24.913 26)" fill="none" stroke="#363636" stroke-linejoin="round" stroke-width="1.2"/>
+      <path id="Path_124629" data-name="Path 124629" d="M194.6,123.679h-.649c-1.392,0-1.947-1.2-1.947-2.6v-5.191c0-2.143,2.6-3.893,5.84-3.893s5.84,1.75,5.84,3.893v7.137" transform="translate(-176.453 -102.916)" fill="#fff" stroke="#363636" stroke-width="1.2"/>
+      <rect id="Rectangle_5168" data-name="Rectangle 5168" width="8" height="6" transform="translate(22.913 20)" fill="#fff" stroke="#363636" stroke-linejoin="round" stroke-width="1.2"/>
+      <line id="Line_1430" data-name="Line 1430" y2="9" transform="translate(20.913 21)" fill="none" stroke="#363636" stroke-linejoin="round" stroke-width="1.2"/>
+      <line id="Line_1431" data-name="Line 1431" y2="16" transform="translate(17.913 14)" fill="none" stroke="#363636" stroke-linejoin="round" stroke-width="1.2"/>
+      <line id="Line_1428" data-name="Line 1428" y2="6" transform="translate(24.913 14)" fill="none" stroke="#363636" stroke-linejoin="round" stroke-width="1.2"/>
+    </g>
+  </g>
+</svg>

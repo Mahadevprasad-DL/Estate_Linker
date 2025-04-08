@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoBroker Times</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #e0ecf9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .header button {
+            padding: 10px 20px;
+            background-color: #ff5f5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Carousel Section */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .carousel-item {
+            min-width: 250px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .carousel-item .content {
+            padding: 10px;
+        }
+
+        .carousel-item .content h3 {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .carousel-item .content p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Categories Section */
+        .categories {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px 0;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .category-card {
+            min-width: 150px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 80px;
+        }
+
+        .category-card img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .category-card .category-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .category-card .category-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .category-card .category-info p {
+            font-size: 0.8rem;
+        }
+
+        /* Scrollbar for Carousels */
+        .carousel, .categories {
+            scrollbar-width: thin;
+            scrollbar-color: #888 #e0ecf9;
+        }
+
+        .carousel::-webkit-scrollbar, .categories::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb, .categories::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+        }
+
+        /* Arrow Buttons */
+        .arrow-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ff5f5f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+        .subscription-box {
+            background-color: #f0f4ff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .subscription-box h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subscription-box p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .subscription-input {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .subscription-input input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+        }
+        .subscription-input button {
+            padding: 10px 20px;
+            background-color: #ff5f5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .blog-section h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .category-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .category-tags .tag {
+            background-color: #e0ecf9;
+            color: #3b6bb2;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* Featured Blog Articles */
+        .featured-blogs {
+            display: flex;
+            gap: 20px;
+        }
+        .featured-article {
+            flex: 2;
+        }
+        .featured-article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .featured-article h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .featured-article p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .featured-article small {
+            font-size: 0.8rem;
+            color: #ff5f5f;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+            max-height: 300px;
+            padding-right: 5px;
+        }
+        .related-articles .related-item {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .related-articles .related-item h5 {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .related-articles .related-item p {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        .related-articles .related-item small {
+            color: #ff5f5f;
+            font-size: 0.8rem;
+        }
+
+        /* View More Button */
+        .view-more-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #ff5f5f;
+            border: 1px solid #ff5f5f;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .news-section {
+          width: 90%;
+          max-width: 1200px;
+          background-color: #ffffff;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-left: 180px;
+          margin-bottom: 40px;
+        }
+        .news-title {
+         font-size: 24px;
+         font-weight: bold;
+         color: #333333;
+         margin-bottom: 15px;
+        }
+     
+
+
+
+.city-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.city-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #333333;
+    transition: background-color 0.3s ease;
+}
+
+.city-btn.active,
+.city-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.news-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.news-card {
+    flex: 0 0 30%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+.news-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.city-label {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.news-headline {
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.news-description {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.news-date {
+    font-size: 12px;
+    color: #999999;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>FlatValue Services and Rentals Times</h1>
+            <p>Real Estate, Services & Inspiration Unbounded</p>
+            <button>Subscribe to our blogs</button>
+        </div>
+
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="images/hi1.jpg" alt="Blog 1">
+                <div class="content">
+                    <h3>Legal Heir Certificate Guide</h3>
+                    <p>October 30, 2024 by Jessica Solomon</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/hi2.jpg" alt="Blog 2">
+                <div class="content">
+                    <h3>Urgent Loan Guide 2024</h3>
+                    <p>October 30, 2024 by Prakhar Singh</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/hi3.webp" alt="Blog 2">
+                <div class="content">
+                    <h3>Cleaning</h3>
+                    <p>October 30, 2024 by krihna</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/hi4.jpg" alt="Blog 2">
+                <div class="content">
+                    <h3>Cleaning</h3>
+                    <p>October 30, 2024 by Manjula</p>
+                </div>
+            </div>
+            <!-- Add more carousel items as needed -->
+        </div>
+
+        <!-- Categories Section -->
+        <div class="categories">
+            <button class="arrow-button arrow-left">&#10094;</button>
+            <button class="arrow-button arrow-right">&#10095;</button>
+            <div class="category-card">
+                <img src="images/nri.jpeg" alt="NRI Real Estate">
+                <div class="category-info">
+                    <h4>NRI Real Estate</h4>
+                    <p>55+ Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/hs.jpeg" alt="Home Services">
+                <div class="category-info">
+                    <h4>Home Services</h4>
+                    <p>48+ Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/cl.jpeg" alt="Cash Loan">
+                <div class="category-info">
+                    <h4>Cash Loan</h4>
+                    <p>47+ Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/p.png" alt="Cash Loan">
+                <div class="category-info">
+                    <h4>Property Sellers Guide</h4>
+                    <p>32+ Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/f.png" alt="Cash Loan">
+                <div class="category-info">
+                    <h4>Finance</h4>
+                    <p>29+ Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/pr.jpeg" alt="Cash Loan">
+                <div class="category-info">
+                    <h4>Property Rental Guide</h4>
+                    <p>25+ Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="images/news.jpeg" alt="Cash Loan">
+                <div class="category-info">
+                    <h4>News</h4>
+                    <p>23+ Articles</p>
+                </div>
+            </div>
+            <!-- Add more category cards as needed -->
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Subscription Box -->
+        <div class="subscription-box">
+            <h2>Subscribe to our newsletter</h2>
+            <p>Get latest news delivered straight to your inbox</p>
+            <div class="subscription-input">
+                <input type="email" placeholder="Enter your email address">
+                <button>Subscribe Now</button>
+            </div>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="blog-section">
+            <h3>Real Estate</h3>
+            <div class="category-tags">
+                <span class="tag">Property Buyers Guide</span>
+                <span class="tag">Property Sellers Guide</span>
+                <span class="tag">Property Rental Guide</span>
+            </div>
+
+            <div class="featured-blogs">
+                <!-- Featured Blog Article -->
+                <div class="featured-article">
+                    <img src="images/hl.jpg" alt="Featured Article">
+                    <h4>Most Expensive Apartments in Pune 2024: Top 10 Picks for Luxury Living</h4>
+                    <p>Often referred to as the pride of India, Pune is one city that doesn't fall far behind...</p>
+                    <small>October 30, 2024 by Simon Ghosh</small>
+                </div>
+                
+                <!-- Related Articles -->
+                <div class="related-articles">
+                    <div class="related-item">
+                    
+                        <h5>Top 10 Most Expensive Houses in Mumbai: Location, Prices and More in 2024</h5>
+                        <p>October 24, 2024 by Krishnanunni H M</p>
+                    </div>
+                    <div class="related-item">
+                        <h5>Top 10 Real Estate Company in Noida: Trusted Solutions for All Your Property Needs in 2024</h5>
+                        <p>October 24, 2024 by Krishnanunni H M</p>
+                    </div>
+                    <div class="related-item">
+                        <h5>Top 10 Real Estate Company in Coimbatore: Finding Your Ideal Property Made Easy in 2024</h5>
+                        <p>October 24, 2024 by Krishnanunni H M</p>
+                    </div>
+                    <div class="related-item">
+                        <h5>Top 10 Real Estate Companies in Kolkata in 2024</h5>
+                        <p>October 24, 2024 by Krishnanunni H M</p>
+                    </div>
+                    <div class="related-item">
+                        <h5>Top 10 Most Expensive Houses in Bangalore: Luxury Homes and Real Estate in 2024</h5>
+                        <p>October 15, 2024 by Simon Ghosh</p>
+                    </div>
+                    <div class="related-item">
+                        <h5>Expert Property Consultant in Delhi for All Your Real Estate Needs</h5>
+                        <p>October 15, 2024 by Simon Ghosh</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="view-more-btn">View More in Property Buyers Guide</a>
+        </div>
+    </div>
+
+    <div class="news-section">
+        <h2 class="news-title">Trending News in Real Estate</h2>
+        <div class="city-buttons">
+            <button class="city-btn active">Mumbai</button>
+            <button class="city-btn">Pune</button>
+            <button class="city-btn">Hyderabad</button>
+            <button class="city-btn">Bangalore</button>
+            <button class="city-btn">Chennai</button>
+            <button class="city-btn">Delhi</button>
+        </div>
+        <div class="news-carousel">
+            <div class="news-card">
+                <img src="images/mu1.png" alt="Mumbai Buildings" class="news-image">
+                <div class="news-content">
+                    <span class="city-label">Mumbai</span>
+                    <h3 class="news-headline">Top 10 Tallest Buildings in Mumbai</h3>
+                    <p class="news-description">Almost touching the skyline, there are multiple skyscrapers in the glamorous city of Mumbai...</p>
+                    <span class="news-date">August 25, 2023 by NoBroker.com</span>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/mu2.jpg" alt="Mumbai Areas" class="news-image">
+                <div class="news-content">
+                    <span class="city-label">Mumbai</span>
+                    <h3 class="news-headline">Top 12 Posh Areas in Mumbai: Property Prices, Connectivity, Nearby Areas in 2024</h3>
+                    <p class="news-description">Posh Areas in Mumbai embody the pinnacle of luxury, exclusivity, and the highest living standards...</p>
+                    <span class="news-date">September 3, 2024 by Vivek Mishra</span>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/mu3.jpg" alt="Cost of Living in Mumbai" class="news-image">
+                <div class="news-content">
+                    <span class="city-label">Mumbai</span>
+                    <h3 class="news-headline">Cost of Living in Mumbai in 2024!</h3>
+                    <p class="news-description">The cost of living in Mumbai beckons as a pivotal concern for many envisioning life in India's city of dreams...</p>
+                    <span class="news-date">February 22, 2024 by Vivek Mishra</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const categories = document.querySelector('.categories');
+        const arrowLeft = document.querySelector('.arrow-left');
+        const arrowRight = document.querySelector('.arrow-right');
+
+        let scrollPosition = 0;
+
+        arrowLeft.addEventListener('click', () => {
+            scrollPosition -= 300;
+            categories.scrollLeft = scrollPosition;
+        });
+
+        arrowRight.addEventListener('click', () => {
+            scrollPosition += 300;
+            categories.scrollLeft = scrollPosition;
+        });
+    </script>
+
+</body>
+</html>

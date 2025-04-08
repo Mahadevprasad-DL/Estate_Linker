@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-height: 100vh;
+            animation: fadeIn 1s ease;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .vip-container {
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 750px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .vip-box {
+            background-color: whitesmoke;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            position: relative;
+            width: 400px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .secure-payment {
+            text-align: center;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+    margin-bottom: 15px;
+    display: flex; /* Added Flexbox */
+    flex-direction: column; /* Arrange buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+}
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .payment-methods {
+            margin: 10px 0;
+            font-size: 14px;
+            padding-left: 15px;
+        }
+
+        .payment-methods img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .whatsapp-logo {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+    
+        .vip-box h3 {
+            color: brown;
+            margin: 0;
+        }
+
+        .vip-box p {
+            color: black;
+            margin: 0;
+        }
+
+        .arrow {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+        }
+
+        .savings-text {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .payment-button {
+            text-decoration: none;
+        }
+
+        .payment-button button {
+            background-color: #2980b9;
+            color: white;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .payment-button button:hover {
+            background-color: #1f6d99;
+            transform: translateY(-2px);
+        }
+
+        .payment-button button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Payment Form</h1>
+        <div class="secure-payment">Secure Payment</div>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="paymentType">Payment Type:</label>
+                <select id="paymentType" name="paymentType" required>
+                    <option value="" disabled selected>Select payment type</option>
+                    <option value="houseRent">House Rent</option>
+                    <option value="officeShopRent">Office/Shop Rent</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+                <p>Get payment updates on WhatsApp
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                        class="whatsapp-logo">
+                </p>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <!-- Use actual button elements instead of <a> for form submission -->
+                <button type="submit" formaction="credit.html" class="submit-button">Proceed to Payment (Credit Card)</button>
+                <button type="submit" formaction="debit.html" class="submit-button">Proceed to Payment (Debit Card)</button>
+                <button type="submit" formaction="upi.html" class="submit-button">Proceed to Payment (UPI)</button>
+                <button type="submit" formaction="bank.html" class="submit-button">Proceed to Payment (Bank Transfer)</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="vip-container">
+        <h1>VIP Membership</h1>
+        <div class="vip-box" onclick="window.location.href='vippay.html';">
+            <h3>EXTRA 15% DISCOUNT</h3>
+            <p>On Home and Legal services.</p>
+            <img src="images/law.png" alt="Arrow" class="arrow">
+        </div>
+        <div class="vip-box" onclick="window.location.href='vippay.html';">
+            <h3>UPTO 15% OFF</h3>
+            <p>Plans.</p>
+            <img src="images/planning.png" alt="Arrow" class="arrow">
+        </div>
+        <div class="vip-box" onclick="window.location.href='vippay.html';">
+            <h3>3X NBCash</h3>
+            <p>On all Bookings!</p>
+            <img src="images/booking.png" alt="Arrow" class="arrow">
+        </div>
+        <div class="vip-box" onclick="window.location.href='vippay.html';">
+            <h3>UPTO 20% DISCOUNT</h3>
+            <p>On Gift Vouchers.</p>
+            <img src="images/voucher.png" alt="Arrow" class="arrow">
+        </div>
+
+        <p class="savings-text">Unlock Savings Worth Up to <span style="color: gold;">$20,000</span></p>
+        <a href="vippayment.html" class="payment-button">
+            <button>
+                Pay And Continue
+            </button>
+        </a>
+
+    </div>
+</body>
+
+</html>

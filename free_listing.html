@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlatValue Benefits</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        
+        .benefit {
+            text-align: center;
+            width: 200px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .benefit img {
+            width: 140px;
+            height: 140px;
+            transition: transform 0.3s;
+        }
+        
+        .benefit h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .benefit p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        /* Hover Animation */
+        .benefit:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Delay for Each Benefit Animation */
+        .benefit:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .benefit:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .benefit:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        /* How It Works Section */
+        .how-it-works-section {
+            text-align: center;
+            padding: 40px;
+            background-color: #eee;
+        }
+        
+        .how-it-works-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.2s;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            width: 180px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .step img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+        
+        .step h3 {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        
+        .step p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Hover Animation for Steps */
+        .step:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Delay for Each Step Animation */
+        .step:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        
+        .step:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .step:nth-child(3) {
+            animation-delay: 0.7s;
+        }
+
+        /* Keyframes for Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .header {
+        text-align: center;
+        padding: 20px;
+        background-color: #4CAF50; /* Green background color */
+        color: white; /* White text color */
+    }
+    
+    .header h1 {
+        margin: 0;
+        font-size: 2em;
+        animation: fadeIn 1.5s ease forwards;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the Free Listing</h1>
+    </div>
+
+    <div class="benefits-section">
+        <div class="benefit">
+            <img src="images/phone-icon.png" alt="No Calls Icon">
+            <h3>No Calls From Brokers</h3>
+            <p>Your information is kept confidential and you no longer have to worry about calls from brokers.</p>
+        </div>
+        <div class="benefit">
+            <img src="images/verified-icon.png" alt="Verified Icon">
+            <h3>Verified Tenants</h3>
+            <p>Thanks to our technology, only verified and genuine tenants can call you.</p>
+        </div>
+        <div class="benefit">
+            <img src="images/piggy-bank-icon.png" alt="Save Brokerage Icon">
+            <h3>Save Brokerage</h3>
+            <p>No Brokers means No Brokerage! Buy yourself a gift.</p>
+        </div>
+    </div>
+
+    <div class="how-it-works-section">
+        <h2>How it Works</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="images/search.jpg" alt="Listing Process Icon">
+                <h3>Simple Listing Process</h3>
+                <p>As an owner, you can list your property in a few minutes. Just fill out our super simple form. Your property will go live after verification.</p>
+            </div>
+            <div class="step">
+                <img src="images/phonecall.jpg" alt="Schedule Viewing Icon">
+                <h3>Tenant Schedules Viewing</h3>
+                <p>The tenant selects the property and schedules a viewing at their convenience.</p>
+            </div>
+            <div class="step">
+                <img src="images/shakeHands.jpg" alt="Move In Icon">
+                <h3>Move-In Made Easy</h3>
+                <p>After verification, move in hassle-free and enjoy your new place.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

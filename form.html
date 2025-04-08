@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Step Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 30px 0;
+    }
+    .container {
+      width: 500px;
+      max-width: 600px;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin: 20px auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      animation: fadeInUp 0.5s forwards;
+    }
+    .container.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #555;
+    }
+    input[type="text"], input[type="number"], input[type="date"], select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    button {
+      padding: 12px 24px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      flex: 1;
+      margin: 0 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+    
+<!-- Contract Detail Form -->
+<div class="container active" id="contractDetailForm">
+  <h2>Contract Detail</h2>
+  <form id="contractForm" onsubmit="return validateContractForm()">
+    <div class="form-group">
+      <label>Refundable Deposit (₹)</label>
+      <input type="number" min="0" step="0.01" placeholder="Enter amount" name="refundableDeposit" required>
+    </div>
+    <div class="form-group">
+      <label>Agreement Duration</label>
+      <div class="options">
+        <input type="radio" id="other" name="agreementDuration" value="other" onclick="toggleDurationSelect(true)">
+        <label for="other">Select duration</label>
+      </div>
+      <select id="customDuration" name="customDuration" style="display: none; margin-top: 8px;">
+        <option value="">Select duration</option>
+        <option value="1">1 month</option>
+        <option value="2">2 months</option>
+        <option value="3">3 months</option>
+        <option value="4">4 months</option>
+        <option value="5">5 months</option>
+        <option value="6">6 months</option ```html
+        <option value="7">7 months</option>
+        <option value="8">8 months</option>
+        <option value="9">9 months</option>
+        <option value="10">10 months</option>
+        <option value="11">11 months</option>
+        <option value="12">12 months</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Monthly Rent Amount</label>
+      <input type="number" min="0" step="0.01" placeholder="₹" name="monthlyRent" required>
+    </div>
+    <div class="form-group">
+      <label>Non-Refundable Deposit</label>
+      <input type="number" min="0" step="0.01" placeholder="₹" name="nonRefundableDeposit" required>
+    </div>
+    <div class="form-group">
+      <label>Agreement Start Date</label>
+      <input type="date" name="agreementStartDate" required>
+    </div>
+    <div class="form-group">
+      <label>Minimum Lock-in Period (in Months)</label>
+      <input type="number" min="0" placeholder="Months" name="lockInPeriod" required>
+    </div>
+    <div class="button-group">
+      <button type="button" onclick="goToForm('propertyDetailForm')">Save and Next</button>
+    </div>
+  </form>
+</div>
+
+<!-- Property Detail Form -->
+<div class="container" id="propertyDetailForm">
+  <h2>Property Detail</h2>
+  <form id="propertyForm" onsubmit="return validatePropertyForm()">
+    <div class="form-group">
+      <label>Type of Property*</label>
+      <input type="text" name="propertyType" required>
+    </div>
+    <div class="form-group">
+      <label>Floor Number*</label>
+      <input type="number" name="floorNumber" required>
+    </div>
+    <div class="form-group">
+      <label>House Number*</label>
+      <input type="number" name="houseNumber" required>
+    </div>
+    <div class="form-group">
+      <label>Building Name*</label>
+      <input type="text" name="buildingName" required>
+    </div>
+    <div class="form-group">
+      <label>Locality*</label>
+      <input type="text" name="locality" required>
+    </div>
+    <div class="form-group">
+      <label>Road / Street*</label>
+      <input type="text" name="roadStreet" required>
+    </div>
+    <div class="form-group">
+      <label>Society Name*</label>
+      <input type="text" name="societyName" required>
+    </div>
+    <div class="form-group">
+      <label>Pincode*</label>
+      <input type="number" name="pincode" required>
+    </div>
+    <div class="button-group">
+      <button type="button" onclick="goToForm('contractDetailForm')">Back</button>
+      <button type="button" onclick="goToForm('landlordDetailForm')">Save and Next</button>
+    </div>
+  </form>
+</div>
+
+<!-- Landlord Detail Form -->
+<div class="container" id="landlordDetailForm">
+  <h2>Landlord Detail</h2>
+  <form id="landlordForm" onsubmit="return validateLandlordForm()">
+    <div class="form-group">
+      <label>Party Entity Type*</label>
+      <input type="text" name="entityType" required>
+    </div>
+    <div class="form-group">
+      <label>Name*</label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="form-group">
+      <label>Phone Number*</label>
+      <input type="number" name="phoneNumber" required>
+    </div>
+    <div class="form-group">
+      <label>PAN Number*</label>
+      <input type="text" name="panNumber" required>
+    </div>
+    <div class="form-group">
+      <label>Email Address*</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="button-group">
+      <button type="button" onclick="goToForm('propertyDetailForm')">Back</button>
+      <button type="button" onclick="goToForm('tenantDetailForm')">Save and Next</button>
+    </div>
+  </form>
+</div>
+
+<!-- Tenant Detail Form -->
+<div ```html
+class="container" id="tenantDetailForm">
+  <h2>Tenant Detail</h2>
+  <form id="tenantForm" onsubmit="return validateTenantForm()">
+    <div class="form-group">
+      <label>Name*</label>
+      <input type="text" name="tenantName" required>
+    </div>
+    <div class="form-group">
+      <label>Email Address*</label>
+      <input type="email" name="tenantEmail" required>
+    </div>
+    <div class="form-group">
+      <label>Phone Number*</label>
+      <input type="number" name="tenantPhone" required>
+    </div>
+    <div class="form-group">
+      <label>Address*</label>
+      <textarea name="tenantAddress" required></textarea>
+    </div>
+    <div class="button-group">
+      <button type="button" onclick="goToForm('landlordDetailForm')">Back</button>
+      <button type="button" onclick="submitAndDownload()">Submit and Download</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Functions to show/hide the different forms
+  function goToForm(formId) {
+    const forms = document.querySelectorAll('.container');
+    forms.forEach(form => form.classList.remove('active'));
+    document.getElementById(formId).classList.add('active');
+  }
+
+  function toggleDurationSelect(show) {
+    document.getElementById('customDuration').style.display = show ? 'block' : 'none';
+  }
+
+  // Validation Functions
+  function validateContractForm() {
+    const form = document.forms['contractForm'];
+    const refundableDeposit = form['refundableDeposit'].value;
+    const monthlyRent = form['monthlyRent'].value;
+    const nonRefundableDeposit = form['nonRefundableDeposit'].value;
+    const lockInPeriod = form['lockInPeriod'].value;
+
+    if (refundableDeposit <= 0 || monthlyRent <= 0 || nonRefundableDeposit <= 0 || lockInPeriod <= 0) {
+      alert("Please enter valid values for refundable deposit, rent, non-refundable deposit, and lock-in period.");
+      return false;
+    }
+    return true;
+  }
+
+  function validatePropertyForm() {
+    const form = document.forms['propertyForm'];
+    const propertyType = form['propertyType'].value;
+    const floorNumber = form['floorNumber'].value;
+    const houseNumber = form['houseNumber'].value;
+    const buildingName = form['buildingName'].value;
+    const locality = form['locality'].value;
+    const roadStreet = form['roadStreet'].value;
+    const societyName = form['societyName'].value;
+    const pincode = form['pincode'].value;
+
+    if (!propertyType || !floorNumber || !houseNumber || !buildingName || !locality || !roadStreet || !societyName || !pincode) {
+      alert("Please fill all the fields for property details.");
+      return false;
+    }
+    return true;
+  }
+
+  function validateLandlordForm() {
+    const form = document.forms['landlordForm'];
+    const entityType = form['entityType'].value;
+    const name = form['name'].value;
+    const phoneNumber = form['phoneNumber'].value;
+    const panNumber = form['panNumber'].value;
+    const email = form['email'].value;
+
+    if (!entityType || !name || !phoneNumber || !panNumber || !email) {
+      alert("Please fill all the fields for landlord details.");
+      return false;
+    }
+    return true;
+  }
+
+  function validateTenantForm() {
+    const form = document.forms['tenantForm'];
+    const tenantName = form['tenantName'].value;
+    const tenantEmail = form['tenantEmail'].value;
+    const tenantPhone = form['tenantPhone'].value;
+    const tenantAddress = form['tenantAddress'].value;
+
+    if (!tenantName || !tenantEmail || !tenantPhone || !tenantAddress) {
+      alert("Please fill all the fields for tenant details.");
+      return false;
+    }
+    return true;
+  }
+
+  function submitAndDownload() {
+    if (validateContractForm() && validatePropertyForm() && validateLandlordForm() && validateTenantForm()) {
+      const contractData = new FormData(document.forms['contractForm']);
+      const propertyData = new FormData(document.forms['propertyForm']);
+      const landlordData = new FormData(document.forms['landlordForm']);
+      const tenantData = new FormData(document.forms['tenantForm']);
+
+      const data = {
+        contract: Object.fromEntries(contractData),
+        property: Object.fromEntries(propertyData),
+        landlord: Object.fromEntries(landlordData),
+        tenant: Object.fromEntries(tenantData)
+      };
+
+      const json = JSON.stringify(data, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'formData.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  }
+</script>
+</body>
+</html> 

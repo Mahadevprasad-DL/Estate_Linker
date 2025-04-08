@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Room Designs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2c3e50;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+            gap: 20px;
+            padding: 40px; /* Increased padding for more space around the items */
+            animation: slideIn 0.5s ease-in-out;
+            max-width: 1200px; /* Maximum width for the container */
+            margin: auto; /* Center the container */
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+            position: relative; /* For the title overlay */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Slightly lift the card on hover */
+        }
+
+        .card img {
+            width: 80%; /* Image takes the full width of the card */
+            height: 250px; /* Increased height for the images */
+            object-fit: cover; /* Cover the area without stretching */
+            transition: opacity 0.3s;
+        }
+
+        .card h2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+            font-size: 1.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .card:hover h2 {
+            transform: translateY(0); /* Slide in the title on hover */
+        }
+
+        .description {
+            padding: 15px;
+            text-align: left;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pooja Room Designs</h1>
+
+    <div class="container">
+        <div class="card">
+            <img src="images/po1.jpg" alt="Traditional Pooja Room">
+            <h2>Traditional Serenity</h2>
+            <div class="description">A serene traditional setup with intricate designs and decor.</div>
+        </div>
+        <div class="card">
+            <img src="images/po2.jpg" alt="Modern Pooja Room">
+            <h2>Modern Minimalism</h2>
+            <div class="description">A sleek and modern design emphasizing simplicity and elegance.</div>
+        </div>
+        <div class="card">
+            <img src="images/po3.jpg" alt="Elegant Pooja Room">
+            <h2>Elegant Ambiance</h2>
+            <div class="description">An elegant space adorned with beautiful artifacts and lighting.</div>
+        </div>
+        <div class="card">
+            <img src="images/po4.jpg" alt="Cozy Pooja Room">
+            <h2>Cozy Corner</h2>
+            <div class="description">A cozy corner dedicated to prayer and reflection.</div>
+        </div>
+        <div class="card">
+            <img src="images/po5.jpg" alt="Bright Pooja Room">
+            <h2>Bright & Airy</h2>
+            <div class="description">A bright room with natural light enhancing the spiritual atmosphere.</div>
+        </div>
+        <div class="card">
+            <img src="images/po6.jpg" alt="Rustic Pooja Room">
+            <h2>Rustic Charm</h2>
+            <div class="description">A rustic design featuring natural materials and earthy tones.</div>
+        </div>
+    </div>
+
+</body>
+</html>

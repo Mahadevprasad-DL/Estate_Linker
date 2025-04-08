@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#442c7f"/>
+      <stop offset="1" stop-color="#684ea9"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_31089" data-name="Group 31089" transform="translate(-20 -949)">
+    <rect id="Rectangle_400" data-name="Rectangle 400" width="48" height="48" transform="translate(20 949)" fill="none"/>
+    <g id="Group_617" data-name="Group 617" transform="translate(-117 -37)">
+      <rect id="Rectangle_387" data-name="Rectangle 387" width="40" height="40" transform="translate(141 990)" fill="none"/>
+      <g id="Group_31088" data-name="Group 31088" transform="translate(-3788.426 -128.51)">
+        <rect id="Rectangle_5167" data-name="Rectangle 5167" width="13" height="14" transform="translate(3943 1131)" fill="url(#linear-gradient)"/>
+        <path id="path734" d="M4125-2161.436c0-1.281-2.113-2.558-3.839-2.558s-3.839,1.277-3.839,2.558" transform="translate(-171.58 3302.86)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path736" d="M4141.215-2254.223a2.439,2.439,0,0,1-2.559-2.468v-.823a2.438,2.438,0,0,1,2.559-2.467,2.438,2.438,0,0,1,2.559,2.467v.823A2.439,2.439,0,0,1,4141.215-2254.223Z" transform="translate(-191.634 3393.089)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path738" d="M4074.656-2300.1v-2.559h2.559" transform="translate(-131.472 3433.209)" fill="none" stroke="#49494b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path740" d="M4074.656-2110.662v2.559h2.559" transform="translate(-131.472 3252.726)" fill="none" stroke="#49494b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path742" d="M4247.882-2300.1v-2.559h-2.559" transform="translate(-291.903 3433.209)" fill="none" stroke="#49494b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path744" d="M4247.882-2110.662v2.559h-2.559" transform="translate(-291.903 3252.726)" fill="none" stroke="#49494b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path746" d="M3990.82-2419.994c-1.182,1.678-9.068,5.118-12.163,5.118v12.156c0,5.715,11.48,11.967,12.156,12.147.675-.18,12.156-6.869,12.156-11.507v-12.8C3999.593-2414.875,3992-2418.316,3990.82-2419.994Z" transform="translate(-41.231 3543.504)" fill="none" stroke="#49494b" stroke-linejoin="round" stroke-width="1.2"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#442c7f"/>
+      <stop offset="1" stop-color="#684ea9"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_31090" data-name="Group 31090" transform="translate(-20 -949)">
+    <rect id="Rectangle_400" data-name="Rectangle 400" width="48" height="48" transform="translate(20 949)" fill="none"/>
+    <g id="Group_617" data-name="Group 617" transform="translate(-117 -40)">
+      <rect id="Rectangle_387" data-name="Rectangle 387" width="40" height="40" transform="translate(141 993)" fill="none"/>
+      <g id="Group_31085" data-name="Group 31085" transform="translate(-3628.11 -130.741)">
+        <path id="Exclusion_2" data-name="Exclusion 2" d="M7.441,14.527a7.2,7.2,0,0,1-4.407-1.489c0-.007,0-.115,0-.293,0-.971-.007-3.924,0-3.947a3,3,0,0,0-1.543-2.31A4.738,4.738,0,0,0,0,5.851,17.549,17.549,0,0,1,1.4,3.235,7.264,7.264,0,1,1,7.441,14.527ZM5.558,5.919h0L3.944,7.533l3.228,3.228,4.842-4.843L10.4,4.3,7.172,7.533,5.558,5.919Z" transform="translate(3788.495 1132.358)" fill="url(#linear-gradient)"/>
+        <path id="path466" d="M1429.095-2226.739a3.142,3.142,0,0,0,2.98-2.98v-5.216c0-2.461-4.118-3.726-6.706-3.726s-6.706,1.264-6.706,3.726v8.2" transform="translate(2359.427 3376.088)" fill="none" stroke="#49494a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path468" d="M1568-2157.523v-17.138" transform="translate(2220.526 3316.559)" fill="none" stroke="#49494a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path470" d="M1461.33-2174.661v7.451" transform="translate(2319.741 3316.559)" fill="none" stroke="#49494a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path472" d="M1514.663-2078.661v10.432" transform="translate(2270.133 3227.265)" fill="none" stroke="#49494a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path474" d="M1461.33-1982.661v3.726" transform="translate(2319.741 3137.972)" fill="none" stroke="#49494a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path476" d="M1382.7-2062.034H1376v-5.961h6.706Z" transform="translate(2399.113 3217.344)" fill="none" stroke="#49494a" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="path478" d="M1474.977-2369.876a2.857,2.857,0,0,0,2.98-2.98v-1.49a2.857,2.857,0,0,0-2.98-2.98,2.857,2.857,0,0,0-2.98,2.98v1.49A2.857,2.857,0,0,0,1474.977-2369.876Z" transform="translate(2309.82 3505.068)" fill="none" stroke="#49494a" stroke-linejoin="round" stroke-width="1.2"/>
+      </g>
+    </g>
+  </g>
+</svg>

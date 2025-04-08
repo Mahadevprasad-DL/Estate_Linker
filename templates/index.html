@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        /* Base styles for the body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Main container styling */
+        main {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+        }
+
+        /* Welcome text */
+        main p {
+            font-size: 20px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #555;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #4A90E2;
+        }
+
+        button {
+            background: linear-gradient(45deg, #4A90E2, #007bff);
+            color: white;
+            padding: 15px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+        }
+
+        #predictedPrice {
+            margin-top: 40px;
+            font-size: 22px;
+            color: #28a745;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        #predictedPrice.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+      
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+                margin: 30px auto;
+            }
+
+            button {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        FlatValue Services: House Price Prediction
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <p>Welcome to the House Price Prediction Model! Please fill out the details below to get a price estimate.</p>
+
+        <!-- Form for house details -->
+        <form id="predictionForm">
+            <label for="beds">Bedrooms:</label>
+            <select id="beds" name="beds">
+                <option value="" disabled selected>Select number of bedrooms</option>
+                {% for bedroom in bedrooms %}
+                    <option value="{{ bedroom }}">{{ bedroom }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="baths">Baths:</label>
+            <select id="baths" name="baths">
+                <option value="" disabled selected>Select number of bathrooms</option>
+                {% for bathroom in bathrooms %}
+                    <option value="{{ bathroom }}">{{ bathroom }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="" disabled selected>Select size of the house</option>
+                {% for house_size in sizes %}
+                    <option value="{{ house_size }}">{{ house_size }} sqft</option>
+                {% endfor %}
+            </select>
+
+            <label for="zip_code">Zip Code:</label>
+            <select id="zip_code" name="zip_code">
+                <option value="" disabled selected>Select zip code</option>
+                {% for zip_code in zip_codes %}
+                    <option value="{{ zip_code }}">{{ zip_code }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- Button to submit form and get prediction -->
+            <button type="button" onclick="sendData()">Predict Price</button>
+
+            <!-- Predicted Price display -->
+            <div id="predictedPrice"></div>
+        </form>
+    </main>
+
+   
+
+    <!-- JavaScript to handle form submission and data fetch -->
+    <script>
+        // Function to populate dropdowns with data
+        function fetchOptions(endpoint, dropdownId) {
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    const dropdown = document.getElementById(dropdownId);
+                    dropdown.innerHTML = '<option value="" disabled selected>Select an option</option>';
+                    data.forEach(option => {
+                        const optionElement = document.createElement('option');
+                        optionElement.value = option;
+                        optionElement.textContent = option;
+                        dropdown.appendChild(optionElement);
+                    });
+                });
+        }
+
+        // Fetch dropdown data on page load
+        window.onload = function() {
+            fetchOptions('/bedrooms', 'beds');
+            fetchOptions('/bathrooms', 'baths');
+            fetchOptions('/sizes', 'size');
+            fetchOptions('/zip_codes', 'zip_code');
+        };
+
+        // Function to send form data and display predicted price
+        function sendData() {
+            const form = document.getElementById('predictionForm');
+            const formData = new FormData(form);
+
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(price => {
+                const priceDisplay = document.getElementById("predictedPrice");
+                priceDisplay.innerHTML = "Estimated Price: INR " + price;
+                priceDisplay.classList.add('show');
+            });
+        }
+    </script>
+</body>
+</html>

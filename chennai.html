@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Locations in Chennai</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            color: #333;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1200px;
+        }
+        .area-card {
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .area-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .area-name {
+            padding: 15px;
+            font-size: 1.8em;
+            font-weight: bold;
+            background-color: #f0f8ff;
+        }
+        .price-details {
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        .info-link, .booking-button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .info-link:hover, .booking-button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Explore Home Locations in Chennai</h1>
+<h2>Chennai</h2>
+<div class="grid-container">
+    <div class="area-card">
+        <img src="images/tnagar.jpg" alt="T. Nagar">
+        <div class="area-name">T. Nagar</div>
+        <div class="price-details">
+            <p>1BHK: ₹55 Lakhs</p>
+            <p>2BHK: ₹1 Crore</p>
+            <p>3BHK: ₹1.8 Crores</p>
+        </div>
+        <a href="otp.html" class="booking-button">Confirm Booking</a>
+    </div>
+    <div class="area-card">
+        <img src="images/adyar.jpg" alt="Adyar">
+        <div class="area-name">Adyar</div>
+        <div class="price-details">
+            <p>1BHK: ₹65 Lakhs</p>
+            <p>2BHK: ₹1.2 Crores</p>
+            <p>3BHK: ₹2 Crores</p>
+        </div>
+        <a href="otp.html" class="booking-button">Confirm Booking</a>
+    </div>
+    <div class="area-card">
+        <img src="images/velachery.jpg" alt="Velachery">
+        <div class="area-name">Velachery</div>
+        <div class="price-details">
+            <p>1BHK: ₹50 Lakhs</p>
+            <p>2BHK: ₹95 Lakhs</p>
+            <p>3BHK: ₹1.6 Crores</p>
+        </div>
+        <a href="otp.html" class="booking-button">Confirm Booking</a>
+    </div>
+    <div class="area-card">
+        <img src="images/egmore.jpg" alt="Egmore">
+        <div class="area-name">Egmore</div>
+        <div class="price-details">
+            <p>1BHK: ₹70 Lakhs</p>
+            <p>2BHK: ₹1.3 Crores</p>
+            <p>3BHK: ₹2.5 Crores</p>
+        </div>
+        <a href="otp.html" class="booking-button">Confirm Booking</a>
+    </div>
+    <div class="area-card">
+        <img src="images/kolathur.jpg" alt="Kolathur">
+        <div class="area-name">Kolathur</div>
+        <div class="price-details">
+            <p>1BHK: ₹40 Lakhs</p>
+            <p>2BHK: ₹80 Lakhs</p>
+            <p>3BHK: ₹1.4 Crores</p>
+        </div>
+        <a href="otp.html" class="booking-button">Confirm Booking</a>
+    </div>
+    <div class="area-card">
+        <img src="images/porur.jpg" alt="Porur">
+        <div class="area-name">Porur</div>
+        <div class="price-details">
+            <p>1BHK: ₹35 Lakhs</p>
+            <p>2BHK: ₹75 Lakhs</p>
+            <p>3BHK: ₹1.2 Crores</p>
+        </div>
+        <a href="otp.html" class="booking-button">Confirm Booking</a>
+    </div>
+</div>
+<a href="https://www.nobroker.in/property/rent/chennai/Chennai?searchParam=W3sibGF0IjoxMy4wODI2ODAyLCJsb24iOjgwLjI3MDcxODQsInBsYWNlSWQiOiJDaElKWVROOVQtcGxVam9STTlSamFBdW5ZVzQiLCJwbGFjZU5hbWUiOiJDaGVubmFpIn1d&radius=2.0&sharedAccomodation=906&gad_source=1&gclid=CjwKCAjw1NK4BhAwEiwAVUHPUFocTHFgbAhHn4gpBd_oDgikoPDqVKDwBhe7qX3TPmvMR7ALWz99LhoCrQMQAvD_BwE" class="info-link" target="_blank">You want more information? Click here</a>
+
+</body>
+</html>

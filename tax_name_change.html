@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Expert Consultation Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .consult-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-container {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #4a4da1;
+            margin-bottom: 20px;
+        }
+
+        .badge-container img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .consult-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .consult-description {
+            color: #666;
+            font-size: 1em;
+            margin: 15px 0 25px;
+        }
+
+        .benefits-list {
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .benefit-title {
+            font-weight: bold;
+            color: #4a4da1;
+            font-size: 1.1em;
+        }
+
+        .benefit-description {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .packages-container {
+            margin-top: 30px;
+        }
+
+        .packages-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #d3d3d3;
+            margin-bottom: 10px;
+        }
+
+        .tab-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .tab-item.active {
+            color: #4a4da1;
+            border-bottom: 2px solid #4a4da1;
+        }
+
+        .tab-content {
+            padding: 15px;
+            background-color: #e9f5e9;
+            border-radius: 8px;
+        }
+
+        .tab-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab-content ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tab-content ul li img {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .header-section {
+    background-color: purple; /* Background color for the header */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0; /* Rounded corners for top */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff; /* Header text color */
+}
+.property-container {
+        display: flex;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        gap: 20px;
+        margin-top: 40px;
+        margin-top: 80px;
+    }
+    .assistance-section, .services-section {
+        flex: 1;
+    }
+    .header-badge {
+        display: inline-block;
+        background-color: #f0e5ff;
+        color: #6c5ce7;
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .header-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .assistance-list {
+        list-style: none;
+        padding: 0;
+    }
+    .assistance-item {
+        display: flex;
+        align-items: flex-start;
+        margin: 10px 0;
+    }
+    .icon {
+        background-color: #e0f7fa;
+        color: #26a69a;
+        padding: 10px;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-size: 18px;
+    }
+    .item-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .item-description {
+        font-size: 14px;
+        color: #666;
+        margin: 2px 0 0;
+    }
+    .services-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .service-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .service-button {
+        background-color: #e0e0e0;
+        color: #555;
+        padding: 8px 12px;
+        border-radius: 16px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+    }
+    .consultation {
+        margin-top: 20px;
+    }
+    .input-box {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-top: 8px;
+    }
+    .consult-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #ff6b6b;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .service-container {
+        max-width: 700px;
+        margin: auto;
+        background-color: #eef;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+    .service-header {
+        background-color: #3d5afe;
+        color: #fff;
+        padding: 20px;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+    }
+    .service-header h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+    .service-header h2 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 10px 0 0;
+    }
+    .benefit-list {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 0 0 8px 8px;
+    }
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        background-color: #f7f9ff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .benefit-item img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+    .benefit-item .title {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0;
+    }
+    .benefit-item .description {
+        font-size: 14px;
+        color: #666;
+        margin: 2px 0 0;
+    }
+    .customer-info {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        background-color: #e0e7ff;
+        border-radius: 8px;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+    }
+    .customer-info span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .customer-info img {
+        width: 18px;
+        height: 18px;
+    }
+    /* Profile Section Styles */
+.profile-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Profile Cards Container */
+.profile-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Profile Card Styles */
+.profile-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.profile-qualification {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.profile-experience {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Carousel Indicator Styles */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.indicator.active,
+.indicator:hover {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-card {
+        width: 80%;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1 class="header-title">Property Tax Name Change</h1>
+    </div>
+
+
+<div class="consult-container">
+    <div class="badge-container">
+        <img src="https://via.placeholder.com/24" alt="Badge Icon">
+        <span>NB Assured</span>
+    </div>
+    <h2 class="consult-title">Why consult a Legal Expert?</h2>
+    <p class="consult-description">
+        Purchasing a property is the single biggest and expensive affair a person makes in their lifetime. A real estate attorney can make the entire purchasing process easier and safe.
+    </p>
+
+    <div class="benefits-list">
+        <div class="benefit-item">
+            <img src="images/certified_icon.svg" alt="Documents Scrutiny Icon">
+            <div>
+                <p class="benefit-title">Documents Scrutiny</p>
+                <p class="benefit-description">Before the property deed is finalised, property advocate thoroughly examines all the property documents, such as the title check and sale deed.</p>
+            </div>
+        </div>
+
+        <div class="benefit-item">
+            <img src="images/low_price_icon.svg" alt="Protection from Legal Conflicts Icon">
+            <div>
+                <p class="benefit-title">Protection from Legal Conflicts</p>
+                <p class="benefit-description">A legal professional checks the property for any pending legal matters that could put a buyer in jeopardy.</p>
+            </div>
+        </div>
+
+        <div class="benefit-item">
+            <img src="images/legal_expert_icon.svg" alt="Protection against shady sellers Icon">
+            <div>
+                <p class="benefit-title">Protection against shady sellers</p>
+                <p class="benefit-description">A legal professional investigates the ownership of the property, any unpaid loans on it, and guards against frauds.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="packages-container consult-container">
+    <h3 class="packages-title">What do the packages include?</h3>
+    <div class="tabs">
+        <div class="tab-item active">Due Diligence</div>
+    </div>
+    <div class="tab-content">
+        <ul>
+            <li><img src="images/check.png" alt="Check Icon"> Verify property documents before you buy</li>
+            <li><img src="images/check.png" alt="Check Icon"> Title Search Report</li>
+            <li><img src="images/check.png" alt="Check Icon"> Scrutiny of Technical Documents</li>
+            <li><img src="images/check.png" alt="Check Icon"> Scrutiny of Govt. Approvals</li>
+        </ul>
+    </div>
+</div>
+
+<div class="property-container">
+    <!-- Assistance Section -->
+    <div class="assistance-section">
+        <span class="header-badge">NB Assistance</span>
+        <h2 class="header-title">Get end-to-end assistance in buying a property</h2>
+        <ul class="assistance-list">
+            <li class="assistance-item">
+                <div class="icon">✔</div>
+                <div>
+                    <p class="item-title">Sale Agreement Drafting & Execution</p>
+                    <p class="item-description">Drafted by expert lawyers mentioning all clauses.</p>
+                </div>
+            </li>
+            <li class="assistance-item">
+                <div class="icon">✔</div>
+                <div>
+                    <p class="item-title">Home Loan Application & Execution</p>
+                    <p class="item-description">Dedicated manager to ensure quick approval.</p>
+                </div>
+            </li>
+            <li class="assistance-item">
+                <div class="icon">✔</div>
+                <div>
+                    <p class="item-title">Sale Deed Execution & Property Registration</p>
+                    <p class="item-description">Avoid long queues and hassle.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+        <h2 class="services-title">On Demand Services</h2>
+        <div class="service-buttons">
+            <button class="service-button">Property Title Check</button>
+            <button class="service-button">Guidance Value</button>
+            <button class="service-button">Missing Documents Assistance</button>
+            <button class="service-button">Gift Deed</button>
+            <button class="service-button">Encroachment Check</button>
+            <button class="service-button">Encroachment Clearance</button>
+            <button class="service-button">Khata Transfer</button>
+            <button class="service-button">Occupancy Certificate & Encumbrance Certificate Check</button>
+        </div>
+    </div>
+</div>
+
+<div class="service-container">
+    <!-- Header Section -->
+    <div class="service-header">
+        <h1>Online Property Tax Name Change Services</h1>
+        <h2>Benefits of choosing Our Legal Services</h2>
+    </div>
+
+    <!-- Benefit List -->
+    <div class="benefit-list">
+        <div class="benefit-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/lawyer.png" alt="Certified Advocates">
+            <div>
+                <p class="title">Certified Advocates</p>
+                <p class="description">Senior advocates with experience of 15+ years.</p>
+            </div>
+        </div>
+        <div class="benefit-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/handshake.png" alt="Dedicated Legal Expert">
+            <div>
+                <p class="title">Dedicated Legal Expert</p>
+                <p class="description">Doorstep assistance for all documentation.</p>
+            </div>
+        </div>
+        <div class="benefit-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/price-tag.png" alt="Lowest Price">
+            <div>
+                <p class="title">Lowest Price Pre-Negotiated</p>
+                <p class="description">Transparent pricing with the fastest process.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Information -->
+    <div class="customer-info">
+        <span><img src="https://img.icons8.com/ios-filled/50/000000/people.png" alt="Customers">1 lakh+ Happy customers served</span>
+        <span><img src="https://img.icons8.com/ios-filled/50/000000/star.png" alt="Rating">4.9 Rating • 12,450 Reviews</span>
+    </div>
+</div>
+
+<div class="profile-section">
+    <h2 class="section-title">We Work with Expert Lawyers</h2>
+
+    <div class="profile-cards-container">
+        <!-- Profile Card 1 -->
+        <div class="profile-card">
+            <img src="images/VIVEK_AGARWAL.webp" alt="Vivek Agarwal" class="profile-picture">
+            <h3 class="profile-name">Vivek Agarwal</h3>
+            <p class="profile-qualification">MASTER OF LAW<br>(CORPORATE LAW) - LL.M.</p>
+            <p class="profile-experience">14 Years 6 months</p>
+        </div>
+
+        <!-- Profile Card 2 -->
+        <div class="profile-card">
+            <img src="images/Archana_Shukla.webp" alt="Archana Shukla" class="profile-picture">
+            <h3 class="profile-name">Archana Shukla</h3>
+            <p class="profile-qualification">LLB (Hons.), LLM</p>
+            <p class="profile-experience">18 years</p>
+        </div>
+
+        <!-- Profile Card 3 -->
+        <div class="profile-card">
+            <img src="images/S_SUJATHA.webp" alt="S. Sujatha" class="profile-picture">
+            <h3 class="profile-name">S. Sujatha</h3>
+            <p class="profile-qualification">BAL., LLB</p>
+            <p class="profile-experience">21 Years</p>
+        </div>
+
+        <!-- Profile Card 4 -->
+        <div class="profile-card">
+            <img src="images/N_VELAYUDAM.webp" alt="N. Velayuda" class="profile-picture">
+            <h3 class="profile-name">N. Velayuda</h3>
+            <p class="profile-qualification">M.A.B.L.</p>
+            <p class="profile-experience">20 years</p>
+        </div>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+    </div>
+</div>
+
+</body>
+</html>

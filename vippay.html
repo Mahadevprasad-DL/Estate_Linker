@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Membership Offers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2980b9; /* Attractive header color */
+            color: white; /* Text color */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            margin-bottom: 30px; /* Space below header */
+        }
+
+        header h1 {
+            font-size: 2.8rem; /* Increased font size for the main heading */
+            margin: 0; /* Remove margin */
+            text-transform: uppercase; /* Uppercase for emphasis */
+            letter-spacing: 2px; /* Space between letters */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+        }
+
+        header p {
+            font-size: 1.2rem; /* Subheading size */
+            margin-top: 10px; /* Space above subheading */
+            opacity: 0.8; /* Slightly transparent for subtlety */
+        }
+
+        .container {
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: flex-start; /* Align items to the left */
+            flex-wrap: nowrap; /* Prevent wrapping to the next line */
+            overflow-x: auto; /* Allow horizontal scrolling if necessary */
+            padding: 10px 0;
+        }
+
+        .service-box {
+            background-color: white;
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for more depth */
+            margin-right: 20px; /* Space between service boxes */
+            padding: 20px; /* Increased padding */
+            text-align: center;
+            min-width: 180px; /* Minimum width for service boxes */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px); /* Slight lift effect on hover */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
+        .service-box img {
+            width: 150px; /* Increased width of the service images */
+            height: 150px; /* Increased height of the service images */
+            border-radius: 10px; /* Rounded corners for images */
+            object-fit: cover; /* Maintain aspect ratio */
+            transition: transform 0.3s; /* Smooth image scale on hover */
+        }
+
+        .service-box img:hover {
+            transform: scale(1.1); /* Scale effect on image hover */
+        }
+
+        .discount {
+            margin-top: 15px; /* Space between image and discount text */
+            font-weight: bold;
+            font-size: 1.2rem; /* Increased font size for discount */
+            color: black; /* Red color for discount */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .discount:hover {
+            color: #c0392b; /* Darker red on hover */
+        }
+
+        /* 2BHK Section Styles */
+        .bhk-section {
+            margin-top: 30px; /* Space above BHK section */
+        }
+
+        .bhk-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .vip-prize {
+            font-size: 1.5rem;
+            color: #2980b9;
+            display: block; /* Make it block for better spacing */
+        }
+
+        .logos-grid {
+            display: flex; /* Use flexbox for row-wise display */
+            justify-content: space-around; /* Space items evenly */
+            flex-wrap: wrap; /* Wrap items to the next line if necessary */
+        }
+
+        .logos-grid div {
+            text-align: center; /* Center-align text */
+            margin: 10px; /* Margin for spacing between items */
+        }
+
+        .logos-grid img {
+            width: 80px; /* Adjusted width for logos */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .logo-caption {
+            margin-top: 5px; /* Space between image and caption */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Exclusive VIP Membership Offers</h1>
+        <p>Get additional discounts on our premium home services!</p>
+    </header>
+
+    <div class="container">
+        <div class="service-box">
+            <img src="images/ac-service.jpg" alt="AC Cleaning">
+            <p>AC Cleaning</p>
+            <div class="discount">15% Off</div>
+        </div>
+
+        <div class="service-box">
+            <img src="images/Cleaning.jpg" alt="Bathroom Cleaning">
+            <p>Bathroom Cleaning</p>
+            <div class="discount">₹100 Off</div>
+        </div>
+
+        <div class="service-box">
+            <img src="images/packers.jpg" alt="Packers and Movers">
+            <p>Packers and Movers</p>
+            <div class="discount">₹1000 Off</div>
+        </div>
+
+        <div class="service-box">
+            <img src="images/painting.jpg" alt="Painting Services">
+            <p>Painting Services</p>
+            <div class="discount">15% Off</div>
+        </div>
+
+        <div class="service-box">
+            <img src="images/Carpet Cleaning.jpg" alt="Carpet Cleaning">
+            <p>Carpet Cleaning</p>
+            <div class="discount">₹200 Off</div>
+        </div>
+
+        <div class="service-box">
+            <img src="images/lawn.jpg" alt="Lawn Care">
+            <p>Lawn Care</p>
+            <div class="discount">₹150 Off</div>
+        </div>
+
+        <div class="service-box">
+            <img src="images/house.jpg" alt="House Cleaning">
+            <p>House Cleaning</p>
+            <div class="discount">₹500 Off</div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Get Up to 15% Off On Your Plans</h1>
+        <p>Unlock discount up to RS:-150 on our subscription plans of personalized expert services!</p>
+    </header>
+
+    <div class="container">
+        <div class="service-box">
+            <p>Exclusive Pricing</p>
+            <img src="images/Exclusive Pricing.png" alt="Exclusive Pricing">
+            <div class="discount">Enjoy our premium services at a special rate designed for our valued VIP members.</div>
+        </div>
+
+        <div class="service-box">
+            <p>Additional Savings</p>
+            <img src="images/Additional Savings.jpg" alt="Saving">
+            <div class="discount">Unlock extra discounts on all our services with your VIP membership.</div>
+        </div>
+        <div class="service-box">
+            <p>Best Deal</p>
+            <img src="images/best.png" alt="Best Deal">
+            <div class="discount">Experience unbeatable value with our VIP membership, providing the most competitive rates on premium services.</div>
+        </div>
+
+        <div class="service-box">
+            <p>Premium Package</p>
+            <img src="images/p.png" alt="Premium Package">
+            <div class="discount">Elevate your experience with our Premium Package, designed for those who seek the highest quality and personalized service.</div>
+        </div>
+        <div class="service-box">
+            <p>Seasonal Special</p>
+            <img src="images/se.png" alt="Seasonal Special">
+            <div class="discount">Take advantage of our Seasonal Special to enjoy limited-time offers tailored to the current season!</div>
+        </div>
+
+        <div class="service-box">
+            <p>Ultimate Package</p>
+            <img src="images/ul.jpg" alt="Ultimate Package">
+            <div class="discount">Unlock the full potential of your home services with our Ultimate Package!</div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Upto 20% Extra Off On Gift Vouchers!!</h1>
+        <p>Upto 20% Extra Off On Gift Vouchers for brands like Swiggy, Zomato, Myntra, and more!</p>
+    </header>
+
+    <!-- 2BHK Section -->
+    <div class="bhk-section">
+        <div class="bhk-heading">
+            <span>300+ Vouchers</span>
+           
+        </div>
+        <div class="logos-grid">
+            <div>
+                <img src="images/swiggy.png" alt="Swiggy">
+                <div class="logo-caption">6% OFF</div>
+            </div>
+            <div>
+                <img src="images/zo.png" alt="Zomato">
+                <div class="logo-caption">10% OFF</div>
+            </div>
+            <div>
+                <img src="images/myntra.png" alt="Myntra">
+                <div class="logo-caption">5% OFF</div>
+            </div>
+            <div>
+                <img src="images/flipkart.jpg" alt="Flipkart">
+                <div class="logo-caption">6% OFF</div>
+            </div>
+            <div>
+                <img src="images/amazon.jpg" alt="Amazon">
+                <div class="logo-caption">38% OFF</div>
+            </div>
+            <div>
+                <img src="images/nykaa.png" alt="Nykaa">
+                <div class="logo-caption">5% OFF</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

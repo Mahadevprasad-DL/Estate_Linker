@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <style>
+        /* Header styling */
+        .header {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.5rem;
+            animation: fadeIn 1s ease-in-out, bounce 1s infinite;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/pay.jpg'); /* Path to your image */
+            background-size: 70% 70%; /* Set the width and height to fill the body */
+            background-position: left center; /* Aligns the image to the left */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Aligns items to the right */
+            min-height: 100vh;
+            padding-right: 20px; /* Optional padding to avoid content touching the edge */
+            color: white; /* Adjust text color if needed for visibility */
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px; /* Add padding inside the container */
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            width: 400px; /* Adjust width as needed */
+            animation: fadeIn 1s ease-in-out;
+            margin-top: 20px;
+            margin-left: auto; /* This will push the container to the right */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Space between children */
+            height: 100%; /* Fill the height of the container */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5rem; /* Reduced font size */
+            color: #333;
+            margin-bottom: 15px; /* Reduced margin */
+        }
+
+        .form-group {
+            margin-bottom: 10px; /* Reduced margin */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px; /* Reduced padding */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.9rem; /* Reduced font size */
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Payment button */
+        .payment-button {
+            margin-top: 15px; /* Reduced margin */
+            padding: 10px; /* Reduced padding */
+            width: 100%;
+            font-size: 1rem; /* Reduced font size */
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button hover effect */
+        .payment-button:hover {
+            background-color: #218838;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header start -->
+    <div class="header">
+        Booking System
+    </div>
+    <!-- Header end -->
+
+    <div class="container">
+        <h1>Booking Form</h1>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="checkIn">Check-in Date:</label>
+                <input type="date" id="checkIn" name="checkIn" required>
+            </div>
+            <div class="form-group">
+                <label for="checkOut">Check-out Date:</label>
+                <input type="date" id="checkOut" name="checkOut" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests:</label>
+                <select id="guests" name="guests" required>
+                    <option value="" disabled selected>Select number of guests</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </form>
+
+    <!-- Phone Sign-in Button -->
+<div class="pe_signin_button" data-client-id="15356389288657443784" style="margin-top: 20px; display: flex; justify-content: center;">
+    <script src="https://www.phone.email/sign_in_button_v1.js" async></script>
+</div>
+
+<script>
+    function phoneEmailListener(userObj) {
+        var user_json_url = userObj.user_json_url;
+
+        alert('Phone Verification Successful !' + user_json_url);
+
+        // Redirect to payment.html after successful verification
+        window.location.href = 'payment.html';
+    }
+</script>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Booking information submitted successfully!');
+            // Here you can add additional code to handle the form submission
+        });
+    </script>
+</body>
+
+</html>

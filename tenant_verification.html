@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Basic Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    header {
+        width: 100%;
+        background-color: #6a1b9a;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .container, .cont {
+        background-color: white;
+        padding: 20px;
+        max-width: 700px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* How it Works Section */
+    .how-it-works h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .step img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        background-color: #eee;
+        padding: 1px;
+        border-radius: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-content h3 {
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .step-content p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* Services Section */
+    .services-section h2, .sample-reports h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .service {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .service img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        background-color: #eee;
+        padding: 1px;
+        border-radius: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-content h3 {
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .service-content p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* Sample Reports Section */
+    .sample-reports {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+    }
+
+    .sample-reports p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .download-buttons {
+        display: flex;
+        gap: 10px; /* Adjust gap as needed */
+    }
+
+    .download-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #6a1b9a;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .download-button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+</style>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Tenant Verification</h1>
+    </header>
+
+    <!-- How it Works Section -->
+    <div class="container">
+        <h1>Tenant Verification</h1>
+        <div class="how-it-works">
+            <h2>How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="images/checklist.png" alt="Choose Plan Icon">
+                    <div class="step-content">
+                        <h3>Choose your plan</h3>
+                        <p>Select a package that best suits your requirements</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="images/resume.png" alt="Enter Tenant Details Icon">
+                    <div class="step-content">
+                        <h3>Enter tenant details</h3>
+                        <p>Fill in the basic details of the tenant to get the process started</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="images/immigration.png" alt="Get Verification Report Icon">
+                    <div class="step-content">
+                        <h3>Get Verification Report</h3>
+                        <p>Report will be sent to your email address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services We Offer and Sample Reports Section -->
+    <div class="cont">
+        <h1>Tenant Verification</h1>
+
+        <!-- Services We Offer Section -->
+        <div class="services-section">
+            <h2>Services We Offer</h2>
+            <div class="service">
+                <img src="images/face-recognition.png" alt="ID Verification Icon">
+                <div class="service-content">
+                    <h3>ID Verification</h3>
+                    <p>Confirms the authenticity of the tenant’s documents.</p>
+                </div>
+            </div>
+            <div class="service">
+                <img src="images/peace.png" alt="Criminal Record Check Icon">
+                <div class="service-content">
+                    <h3>Criminal Record Check</h3>
+                    <p>Background check of the tenant for any criminal records.</p>
+                </div>
+            </div>
+            <div class="service">
+                <img src="images/criminal-record.png" alt="Civil Litigation Check Icon">
+                <div class="service-content">
+                    <h3>Civil Litigation Check</h3>
+                    <p>Background check of the tenant for any civil records.</p>
+                </div>
+            </div>
+            <div class="service">
+                <img src="images/product-durability.png" alt="Permanent Address Verification Icon">
+                <div class="service-content">
+                    <h3>Permanent Address Verification</h3>
+                    <p>Physical visit to verify the property address provided by the tenant.</p>
+                </div>
+            </div>
+            <div class="service">
+                <img src="images/refer.png" alt="Reference Check Icon">
+                <div class="service-content">
+                    <h3>Reference Check</h3>
+                    <p>Reviews from the past landlord of your tenant will be provided.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample Reports Section -->
+        <div class="sample-reports">
+            <h2>Sample Reports</h2>
+            <p>Download sample reports that you will receive in your tenant verification report</p>
+            <div class="download-buttons">
+                <a href="pdf/pdf1.pdf" class="download-button" download>
+                    <img src="download-icon.png" alt="Download Icon">
+                    Sample Report 1
+                </a>
+                <a href="pdf/pdf2.pdf" class="download-button" download>
+                    <img src="download-icon.png" alt="Download Icon">
+                    Sample Report 2
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

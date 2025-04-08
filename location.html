@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Dream City</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+            transition: color 0.3s;
+        }
+        h1:hover {
+            color: #007BFF; /* Change color on hover */
+        }
+        h2 {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            transition: border-color 0.3s;
+        }
+        .search-input:focus {
+            border-color: #007BFF; /* Change border color on focus */
+        }
+        .search-button {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .city-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .city-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0; /* Change background color on hover */
+        }
+        .city-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .city-card:hover img {
+            transform: scale(1.1); /* Scale image on hover */
+        }
+        .city-name {
+            padding: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .city-card:hover .city-name {
+            color: #007BFF; /* Change text color on hover */
+        }
+        .city-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .city-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Choose Your Dream City</h1>
+<h2>Select the location of your dream home</h2>
+
+<div class="search-container">
+    <input type="text" id="citySearch" class="search-input" placeholder="Type a city name..." onkeypress="checkEnter(event)">
+    <button class="search-button" onclick="searchCity()">Search</button>
+    <button class="search-button" onclick="startSpeechRecognition()">🎤</button>
+</div>
+
+<div class="grid-container">
+    <div class="city-card">
+        <img src="images/ba.jpg" alt="Bangalore">
+        <div class="city -name">Bangalore</div>
+        <button class="city-button" onclick="location.href='bangalore.php'">View Bangalore</button>
+    </div>
+    <div class="city-card">
+        <img src="images/mu.jpg" alt="Mumbai">
+        <div class="city-name">Mumbai</div>
+        <button class="city-button" onclick="location.href='mumbai.html'">View Mumbai</button>
+    </div>
+    <div class="city-card">
+        <img src="images/che.jpg" alt="Chennai">
+        <div class="city-name">Chennai</div>
+        <button class="city-button" onclick="location.href='chennai.html'">View Chennai</button>
+    </div>
+    <div class="city-card">
+        <img src="images/pu.jpg" alt="Pune">
+        <div class="city-name">Pune</div>
+        <button class="city-button" onclick="location.href='pune.html'">View Pune</button>
+    </div>
+    <div class="city-card">
+        <img src="images/hy.jpg" alt="Hyderabad">
+        <div class="city-name">Hyderabad</div>
+        <button class="city-button" onclick="location.href='hyderabad.html'">View Hyderabad</button>
+    </div>
+    <div class="city-card">
+        <img src="images/myjpg.jpg" alt="Mysuru">
+        <div class="city-name">Mysuru</div>
+        <button class="city-button" onclick="location.href='mysuru.html'">View Mysuru</button>
+    </div>
+</div>
+
+<script>
+    let cities = {
+        "Bangalore": "bangalore.php",
+        "Mumbai": "mumbai.html",
+        "Chennai": "chennai.html",
+        "Pune": "pune.html",
+        "Hyderabad": "hyderabad.html",
+        "Mysuru": "mysuru.html"
+    };
+
+    function searchCity() {
+        let searchInput = document.getElementById("citySearch").value.trim();
+        if (cities[searchInput]) {
+            location.href = cities[searchInput];
+        }
+    }
+
+    function startSpeechRecognition() {
+        let recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-US";
+        recognition.maxResults = 10;
+        recognition.onresult = event => {
+            let spokenCity = event.results[0][0].transcript.trim();
+            document.getElementById("citySearch").value = spokenCity;
+            if (cities[spokenCity]) {
+                location.href = cities[spokenCity];
+            }
+        };
+        recognition.start();
+    }
+
+    function checkEnter(event) {
+        if (event.key === "Enter") {
+            searchCity();
+        }
+    }
+</script>
+
+</body>
+</html>

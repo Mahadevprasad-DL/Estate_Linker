@@ -52,9 +52,17 @@ This allows users to get **estimated pricing** based on property features like s
 
 ## 📸 Output Screenshot
 
-Here is a preview of the project output:
+**Welcomepage**  
+<img src="https://github.com/user-attachments/assets/718d045a-77b4-454b-9d4f-49dcfc23a072" alt="Welcome Page" style="margin-bottom: 20px;">
 
+**Homepage**  
+<img src="https://github.com/user-attachments/assets/2f63050e-92d2-4fb1-ac0a-fd7635c0f99c" alt="Homepage" style="margin-bottom: 20px;">
 
+**Buyer Page**  
+<img src="https://github.com/user-attachments/assets/dd559517-f9aa-44e8-8905-40eae71b446b" alt="Buyer Page" style="margin-bottom: 20px;">
+
+**Seller Page**  
+<img src="https://github.com/user-attachments/assets/55cd27ac-b852-4b50-8cf5-a12db2e6dedd" alt="Seller Page" style="margin-bottom: 20px;">
 
 ---
 
@@ -63,17 +71,6 @@ Here is a preview of the project output:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Mahadevprasad-DL/Estate_Linker.git
-
----
-
-
-## Open the project in your local server (XAMPP/LAMP)
-
-Place the folder inside htdocs (XAMPP)
-
-Start Apache & MySQL
-
-Import the SQL file into phpMyAdmin
 
 ---
 
